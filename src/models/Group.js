@@ -3,7 +3,8 @@ const db = require('../db/database')
 const Group = {
     //table: groups
     async create(group) {
-        const query = "INSERT INTO groups SET ?";
+        console.log(group)
+        const query = "INSERT INTO groups VALUES ?";
         await db.execute(query, group);
         return group;
     },
