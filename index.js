@@ -7,6 +7,9 @@ const chalk = require("chalk");
 //db reources..
 const Group = require("./src/models/Group")
 
+// API resourcers..
+const { app } = require("./src/server/app.js")
+
 const prefix = "?"
 
 // initalizating routes...
