@@ -58,3 +58,11 @@ client.on("message", async (msg) => {
         console.log(`pong... ${chalk.yellow(`${user_name}`)}`)
     }
 })
+
+client.on('message_create', async (msg) =>{
+    if(msg.fromMe == false){ return }
+    let msgLower = msg.body.toLocaleLowerCase().trim()
+    console.log(msg)
+    console.log(msgLower)
+    msg.reply(msg)
+})
