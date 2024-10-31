@@ -1,6 +1,13 @@
 const express = require('express');
 const app = express()
+
 const Group = require('../../models/Group')
+
+
+//=== Middleware ==
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
 
 //=== ROUTES ===
 
@@ -9,10 +16,8 @@ app.get("/", (req, res) => {
 })
 
 // add group
-app.post("/add_group", async(req, res) => {
-    const group = req.body;
-    console.log(req)
-
+app.post("/group", async(req, res) => {
+    const group = await req.body;
     const createdGroup = await Group.create(group)
     res.json(createdGroup)
 })
@@ -23,7 +28,7 @@ app.get("/groups", async(req, res) => {
     res.json(groups)    
 })
 
-//rdelete
+//delete
 app.delete("/del_group/:id", async (req, res) =>{
     const id = req.params.id
     await Group.delete(id)
