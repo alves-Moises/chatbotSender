@@ -4,7 +4,8 @@ const dbConfig = {
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'node_send_bot'
+    database: 'node_send_bot',
+    namedPlaceholders: true
 };
 
 const db = mysql.createPool(dbConfig);
