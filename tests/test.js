@@ -29,7 +29,7 @@ app.listen(port, () => {
     console.log(
         `${chalk.yellow("SERVIDOR")} ${chalk.green("OK")}! }`
     )
-  
+
     console.log(`PORT: ${chalk.bgRed(`${port}  `)}`)
 })
 
