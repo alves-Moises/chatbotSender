@@ -8,7 +8,7 @@ const chalk = require("chalk");
 const Group = require("./src/models/Group")
 
 // API resourcers..
-const { app } = require("./src/server/app.js")
+const { app } = require("./src/server/app")
 
 const prefix = "?"
 
@@ -33,6 +33,7 @@ client.on("message", async (msg) => {
 
 client.on('message_create', async (msg) =>{
     if(msg.fromMe == false){ return }
+    
     let msgLower = msg.body.toLocaleLowerCase().trim()
     console.log(msg)
     console.log(msgLower)
