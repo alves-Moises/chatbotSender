@@ -12,6 +12,8 @@ const qrcode = require("qrcode-terminal")
 // -+-+-+-+ CONTACT ME:    https://linktr.ee/alves_moises
 // -+-+-+-+ 
 // -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+console.log(chalk.yellow("Iniciando..."))
 const client = new Client({
     authStrategy: new LocalAuth({
 	puppeteer: {
