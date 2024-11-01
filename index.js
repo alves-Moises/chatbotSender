@@ -34,8 +34,33 @@ client.on("message", async (msg) => {
 client.on('message_create', async (msg) =>{
     if(msg.fromMe == false){ return }
     
-    let msgLower = msg.body.toLocaleLowerCase().trim()
-    console.log(msg)
+    let msgLower = msg.body
+    let chat =  await msg.getChat()
+
     console.log(msgLower)
-    msg.reply(msg)
+    console.log("msgLower acima")
+    if(msgLower == prefix + "groupID"){
+        chat.sendMessage("zz")
+        // msg.delete(everyone=true)
+        
+        //seeing chat atributes
+        // console.log(chat)
+        // console.log(chat.description)
+        
+        
+
+        chat.sendMessage(msg.getInfo())
+    }
+
+    if(msgLower == prefix + "addGroup"){
+        group = {
+            "name": chat.name, 
+            "group_ID": chat.id._serialized,
+            "description": chat.description,
+            "type": 'vendas'
+        }
+        CreateGroup(group)
+        msg.delete(everyone=true)
+    }
+
 })
