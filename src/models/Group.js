@@ -20,6 +20,12 @@ const Group = {
     async delete(ID){
         const query = "DELETE FROM groups WHERE id = ?"
         await db.execute(query, [ID])
+    },
+
+    async getGroup(ID){
+        const query = `SELECT * FROM groups WHERE group_id = '${ID}'`
+        const group = await db.execute(query)
+        return group
     }
 }
     
