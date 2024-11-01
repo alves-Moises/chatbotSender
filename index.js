@@ -1,12 +1,13 @@
 console.log('Entrando... Aguarde')
 
 const { MessageMedia, Client, GroupNotificationTypes } = require("whatsapp-web.js")
-const client = require("./src/clientStart.js")
 const chalk = require("chalk");
+
+const client = require("./src/clientStart.js")
 
 //db reources..
 const Group = require("./src/models/Group")
-
+const { CreateGroup } = require("./src/controller/groupController")
 // API resourcers..
 const { app } = require("./src/server/app")
 
@@ -64,3 +65,4 @@ client.on('message_create', async (msg) =>{
     }
 
 })
+
