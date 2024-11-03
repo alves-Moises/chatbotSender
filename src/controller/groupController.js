@@ -5,10 +5,6 @@ const green = require("chalk")
 const yellow = require("chalk")
 
 async function CreateGroup(groupData) {
-    let name = groupData.name 
-    let chatID = groupData.group_ID
-    let desc = groupData.description
-    let type = groupData.type
     data = {
         "name": groupData.name ,
         "group_id": groupData.group_ID,
@@ -68,7 +64,8 @@ async function findADSGroups(){
                 "name": arrGroups[i].name
             })
     }
+    return id_groups
 
 }
 
-module.exports = { CreateGroup }
+module.exports = { CreateGroup, findGroupsByType, findADSGroups }
