@@ -1,4 +1,4 @@
-const { Client, LocalAuth} = require('whatsapp-web.js');
+const { Client, LocalAuth } = require('whatsapp-web.js');
 const chalk = require("chalk");
 const wwebVersion = '2.2412.54';
 const qrcode = require("qrcode-terminal")
@@ -16,15 +16,16 @@ const qrcode = require("qrcode-terminal")
 console.log(chalk.yellow("Iniciando..."))
 const client = new Client({
     authStrategy: new LocalAuth({
-	puppeteer: {
-		headless: false
-	},
-	clientId: "alves_bot",
-	webVersionCache: {
-        type: 'remote',
-        remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${wwebVersion}.html`,
-    },
-})})
+		puppeteer: {
+			headless: false
+		},
+		clientId: "alves_bot",
+		webVersionCache: {
+			type: 'remote',
+			remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${wwebVersion}.html`,
+		},
+	})
+})
 
 client.on("qr", (qr) => {
 	qrcode.generate(qr, { small: true })
