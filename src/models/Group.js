@@ -6,8 +6,18 @@ const Group = {
         let name = groupData.name 
         let group_id = groupData.group_id
         let description = groupData.description
-        let type = groupData.type
-        const query = `INSERT INTO groups (name, group_id, description, type) VALUES ('${name}', '${group_id}', '${description}', '${type}')`;
+        let type = groupData.type // 
+
+        const query = `
+            INSERT INTO groups 
+            ( name, group_id, description, type ) 
+            VALUES (
+                '${name}', 
+                '${group_id}', 
+                '${description}', 
+                '${type}'
+            )
+        `
 
         await db.execute(query);
         return groupData;
