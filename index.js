@@ -48,7 +48,7 @@ client.on('message_create', async (msg) =>{
         
         
 
-        chat.sendMessage(msg.getInfo())
+        // chat.sendMessage(msg.getInfo())
     }
 
     if(msgLower.startsWith(prefix + "addgroup")){
