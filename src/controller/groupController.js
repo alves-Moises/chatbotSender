@@ -26,9 +26,9 @@ async function CreateGroup(groupData) {
         Group.create(data)
 
         console.log(`${chalk.yellow("GROUP INFO:")}`)
-        console.log(`  ${chalk.blackBright("Name")}: ${name}`)
-        console.log(`  ${chalk.blackBright("Desc")}: ${desc}`)
-        console.log(`  ${chalk.blackBright("Type")}: ${type}`)
+        console.log(`  ${chalk.blackBright("Name")}: ${data.name}`)
+        console.log(`  ${chalk.blackBright("Desc")}: ${descSubstr}`)
+        console.log(`  ${chalk.blackBright("Type")}: ${data.type}`)
         console.log(chalk.yellow("Grupo adicionado com " + chalk.green("SUCESSO!")))
     }else{
         console.log(`${chalk.red("FAlha ao ciar grupo.")}`)
