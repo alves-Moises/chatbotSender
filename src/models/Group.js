@@ -28,6 +28,11 @@ const Group = {
         const query = `SELECT * FROM groups WHERE group_id = '${ID}'`
         const group = await db.execute(query)
         return group
+    },
+    async getGroupByType(Type){
+        const query = `SELECT * FROM groups WHERE type = '${Type}'`
+        const groups = await db.execute(query)
+        return groups
     }
 }
     
