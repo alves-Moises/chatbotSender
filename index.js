@@ -64,5 +64,15 @@ client.on('message_create', async (msg) =>{
         msg.delete(everyone=true)
     }
 
+    
+    if(msgLower.startsWith(prefix + "sbyt")){
+        if(msgLower == 1){ return }
+        let type = msgSplit[1]
+        findGroupsByType((type))
+    }
+
+    if(msgLower == prefix + "help"){
+        chat.sendMessage(Help())
+    }
 })
 
