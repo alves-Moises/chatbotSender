@@ -76,3 +76,21 @@ client.on('message_create', async (msg) =>{
     }
 })
 
+client.on("message_create", async(msg) => {
+    if(msg.fromMe == false){ return }
+    
+    let msgLower = msg.body.toLowerCase().trim()
+
+    if(msgLower.startsWith(prefix + "ads")){
+    
+        let groups = await findADSGroups()
+        
+        console.log(yellow("Enviando ads message..."))
+        for(let i = 0; i < groups.length; i++){
+            console.log(`${i}: ` + yellow(groups[i].name))
+            client.sendMessage(groups[i].id, ITMessage())
+        }
+
+        msg.delete(everyone=true)
+    }
+})
