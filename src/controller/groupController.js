@@ -6,9 +6,10 @@ async function CreateGroup(groupData) {
     let desc = groupData.description
     let type = groupData.type
     data = {
-        "name": name,
-        "group_id": chatID,
-        "description": desc
+        "name": groupData.name ,
+        "group_id": groupData.group_ID,
+        "description": groupData.description,
+        "type": groupData.type
     }
     groupExist = await Group.getGroup(chatID)
     await console.log(groupExist[0])
