@@ -53,15 +53,19 @@ client.on('message_create', async (msg) =>{
         chat.sendMessage(msg.getInfo())
     }
 
-    if(msgLower == prefix + "addGroup"){
+    if(msgLower.startsWith(prefix + "addgroup")){
+        if(chat.isGroup == false){
+            console.log(yellow(chat.name), red("não é grupo."))
+            return 
+        }
         group = {
             "name": chat.name, 
             "group_ID": chat.id._serialized,
             "description": chat.description,
-            "type": 'vendas'
+            "type":  msgSplit.length == 2 ? msgSplit[1]  : "vendas"
         }
-        CreateGroup(group)
         msg.delete(everyone=true)
+        CreateGroup(group)
     }
 
     
