@@ -1,15 +1,23 @@
 console.log('Entrando... Aguarde')
 
 const { MessageMedia, Client, GroupNotificationTypes } = require("whatsapp-web.js")
+
 const chalk = require("chalk");
+const red = chalk.red
+const yellow = chalk.yellow 
+const green = chalk.green 
 
 const client = require("./src/clientStart.js")
 
 //db reources..
 const Group = require("./src/models/Group")
-const { CreateGroup } = require("./src/controller/groupController")
+const { CreateGroup, findGroupsByType, findADSGroups } = require("./src/controller/groupController")
+
 // API resourcers..
-const { app } = require("./src/server/app")
+const { app } = require("./src/server/app");
+
+const { Help, ITMessage } = require("./src/default_answer.js");
+
 
 const prefix = "?"
 
