@@ -11,8 +11,10 @@ async function CreateGroup(groupData) {
         "description": groupData.description,
         "type": groupData.type
     }
-    groupExist = await Group.getGroup(chatID)
-    await console.log(groupExist[0])
+
+    groupExist = await Group.getGroup(data.group_id)
+    // await console.log(groupExist[0])
+
     if(groupExist[0] == 0){
         Group.create(data)
 
