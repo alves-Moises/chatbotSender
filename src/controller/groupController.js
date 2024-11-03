@@ -16,6 +16,13 @@ async function CreateGroup(groupData) {
     // await console.log(groupExist[0])
 
     if(groupExist[0] == 0){
+        let descSubstr = ""
+        try {
+            descSubstr = data.description.substring(0, 200)
+        } catch (err) {
+            console.log(chalk.red("Error to catch desc."), chalk.yellow(err))
+            
+        }
         Group.create(data)
 
         console.log(`${chalk.yellow("GROUP INFO:")}`)
