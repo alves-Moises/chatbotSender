@@ -35,14 +35,12 @@ client.on("message", async (msg) => {
 client.on('message_create', async (msg) =>{
     if(msg.fromMe == false){ return }
     
-    let msgLower = msg.body
+    let msgLower = msg.body.toLowerCase().trim()
+    let msgSplit = msgLower.split(" ")
     let chat =  await msg.getChat()
 
-    console.log(msgLower)
-    console.log("msgLower acima")
+    
     if(msgLower == prefix + "groupID"){
-        chat.sendMessage("zz")
-        // msg.delete(everyone=true)
         
         //seeing chat atributes
         // console.log(chat)
