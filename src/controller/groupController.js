@@ -22,7 +22,37 @@ async function CreateGroup(groupData) {
         console.log(chalk.yellow("Grupo adicionado com " + chalk.green("SUCESSO!")))
     }else{
         console.log(`${chalk.red("FAlha ao ciar grupo.")}`)
-        console.log(`Grupo ${name} já existe`)
+        console.log(`Grupo ${data.name} já existe`)
+    }
+}
+
+async function findGroupsByType(Type = "vendas"){
+    let groups = await Group.getGroupByType(Type)
+    let arrGroups = groups[0]
+    let id_groups = []
+    
+    
+
+    for(let i = 0; i < arrGroups.length; i++){
+        id_groups.push(arrGroups[i].name)
+    }
+    console.log(yellow("SearchByID: ") + id_groups)
+    return id_groups
+}
+
+async function findADSGroups(){
+
+    let groups = await Group.getGroupByType("vendas")
+    let arrGroups = groups[0]
+    let id_groups = []
+    
+    
+    
+    for(let i = 0; i < arrGroups.length; i++){
+        id_groups.push({
+                "id": arrGroups[i].group_id, 
+                "name": arrGroups[i].name
+            })
     }
 
 }
