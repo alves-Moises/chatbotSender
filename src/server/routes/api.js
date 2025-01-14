@@ -2,11 +2,13 @@ const express = require('express');
 const app = express()
 
 const Group = require('../../models/Group')
-
+const { ADS } = require("../../../index")
 
 //=== Middleware ==
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+app.use(express.static("public"))
+// app.use(express.urlencoded({extended: true}));
 
 
 //=== ROUTES ===
