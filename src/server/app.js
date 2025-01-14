@@ -9,7 +9,8 @@ app.set('view engine', 'ejs'); // Define EJS como o motor de template
 app.set('views', './src/views/'); // Define a pasta onde seus arquivos EJS estão
 
 // ===== SERVER INTIALIZATING... =====
-app.listen(port, () => {
+app.listen(port, ip, () => {
+
     console.log(
         `${chalk.yellow("SERVIDOR")} ${chalk.green("OK")}! `
     )
