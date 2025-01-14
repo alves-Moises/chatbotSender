@@ -1,3 +1,8 @@
+const chalk = require('chalk');
+const red = chalk.red
+const yellow = chalk.yellow 
+const green = chalk.green 
+
 const mysql = require('mysql2/promise')
 
 const dbConfig = {
@@ -10,4 +15,7 @@ const dbConfig = {
 
 const db = mysql.createPool(dbConfig);
 
+db.on("conection", () => 
+    console.log(`${yellow("DATABASE ")} ${"CONECTED"}!`)
+)
 module.exports = db 
