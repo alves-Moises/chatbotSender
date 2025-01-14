@@ -2,6 +2,7 @@ const chalk = require("chalk");
 
 const app = require("./routes/api.js")
 const port = 8000
+const ip = "192.168.10.20"
 
 
 // ===== SERVER INTIALIZATING... =====
