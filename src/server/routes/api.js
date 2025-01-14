@@ -17,9 +17,6 @@ app.get("/", (req, res) => {
     return "Hello word"
 })
 
-// app.get("/ads", (req, res) => {
-//     ADS()
-// })
 
 
 // add group
