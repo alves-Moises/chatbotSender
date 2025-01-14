@@ -17,6 +17,11 @@ app.get("/", (req, res) => {
     return "Hello word"
 })
 
+// app.get("/ads", (req, res) => {
+//     ADS()
+// })
+
+
 // add group
 app.post("/group", async(req, res) => {
     const group = await req.body;
