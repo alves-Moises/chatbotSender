@@ -23,6 +23,16 @@ const prefix = "?"
 
 
 
+const  ADS = async () => {
+    let groups = await findADSGroups()
+        
+    console.log(yellow("Enviando ads message..."))
+    for(let i = 0; i < groups.length; i++){
+        console.log(`${i}: ` + yellow(groups[i].name))
+        client.sendMessage(groups[i].id, ITMessage())
+    }
+
+}
 
 
 
