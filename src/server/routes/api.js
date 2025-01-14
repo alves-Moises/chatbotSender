@@ -14,7 +14,7 @@ app.use(express.static("public"))
 //=== ROUTES ===
 
 app.get("/", (req, res) => {
-    return "Hello word"
+    res.render('index'); // Renderiza o template 'index.ejs'
 })
 
 
