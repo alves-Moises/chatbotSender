@@ -15,6 +15,7 @@ const { CreateGroup, findGroupsByType, findADSGroups } = require("./src/controll
 
 // API resourcers..
 const { app } = require("./src/server/app");
+app.get("/ads", (req, res) => { ADS() })
 
 const { Help, ITMessage } = require("./src/default_answer.js");
 
