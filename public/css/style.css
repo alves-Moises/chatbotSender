@@ -1,0 +1,32 @@
+@property --text-color-default {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #ddd;
+
+}
+
+body{
+    background-color: #222;
+    color: fff;
+}
+
+.card-chatbot{
+    background-color: #331223;
+    color: var(--text-color-default);
+}
+
+.a-bot{
+    color: var(--text-color-default);
+    border-style:solid;
+    border-radius: 9px;
+    border-color: #080f08;
+    border-width: 2px;
+    padding: 0;
+    text-decoration: none;
+}
+
+.a-bot-div{
+    border-radius: 9px;
+
+    background-color: #1b361b;
+}
