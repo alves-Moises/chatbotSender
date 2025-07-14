@@ -15,7 +15,10 @@ const { CreateGroup, findGroupsByType, findADSGroups } = require("./src/controll
 
 // API resourcers..
 const { app } = require("./src/server/app");
-app.get("/ads", (req, res) => { ADS() })
+app.get("/ads", (req, res) => { 
+    ADS()
+    res.render('success-create')
+})
 
 const { Help, ITMessage } = require("./src/default_answer.js");
 
@@ -26,28 +29,44 @@ const prefix = "?"
 
 const  ADS = async () => {
     let groups = await findADSGroups()
-        
     console.log(yellow("Enviando ads message..."))
     for(let i = 0; i < groups.length; i++){
         console.log(`${i}: ` + yellow(groups[i].name))
         client.sendMessage(groups[i].id, ITMessage())
     }
-
 }
 
 
 
 
 client.on("message", async (msg) => {
-    let msgLower = msg.body.toLocaleLowerCase().trim()
-    let from = msg.from 
+    let msgLower = await msg.body.toLocaleLowerCase().trim()
+    let from = await msg.from 
     user = await msg.getContact()
     user_name = user.pushname
-
+    let chat = await msg.getChat()
     
     if(msgLower == prefix + "ping"){
         msg.reply('pong')
         console.log(`pong... ${chalk.yellow(`${user_name}`)}`)
+    }
+
+    // just for debbuging...
+    try{
+        let data = new Date(msg.timestamp * 1000);
+
+        let dataFormatada = data.toLocaleDateString('pt-BR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+        console.log(yellow("\nMensagem recebida..."))
+        await console.log(`${green(dataFormatada)} || ${yellow(chat.name)} || ${msgLower.slice(0, 20)}`)
+    }catch{
+        console.log(`${red("Erro ao receber mensagem")}`)
     }
 })
 

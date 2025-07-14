@@ -17,6 +17,12 @@ app.get("/", (req, res) => {
     res.render('index'); // Renderiza o template 'index.ejs'
 })
 
+app.get("/custom-message/:msg", (req , res) => {
+    console.log(req.params.msg)
+
+    res.statusCode(200)
+}) 
+
 
 
 // add group

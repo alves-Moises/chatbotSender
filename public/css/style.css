@@ -10,6 +10,9 @@ body{
     color: fff;
 }
 
+.div-cards{
+    justify-content: space-around;
+}
 .card-chatbot{
     background-color: #331223;
     color: var(--text-color-default);
@@ -29,4 +32,8 @@ body{
     border-radius: 9px;
 
     background-color: #1b361b;
+}
+
+.custom_msg{
+    border-radius: 7px;
 }
