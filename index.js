@@ -32,7 +32,7 @@ const  ADS = async () => {
     console.log(yellow("Enviando ads message..."))
     for(let i = 0; i < groups.length; i++){
         console.log(`${i}: ` + yellow(groups[i].name))
-        client.sendMessage(groups[i].id, ITMessage())
+        await client.sendMessage(groups[i].id, ITMessage())
     }
 }
 
@@ -42,8 +42,8 @@ const  ADS = async () => {
 client.on("message", async (msg) => {
     let msgLower = await msg.body.toLocaleLowerCase().trim()
     let from = await msg.from 
-    user = await msg.getContact()
-    user_name = user.pushname
+    let user = await msg.getContact()
+    let user_name = await user.pushname
     let chat = await msg.getChat()
     
     if(msgLower == prefix + "ping"){
@@ -64,7 +64,7 @@ client.on("message", async (msg) => {
             second: '2-digit'
         });
         console.log(yellow("\nMensagem recebida..."))
-        await console.log(`${green(dataFormatada)} || ${yellow(chat.name)} || ${msgLower.slice(0, 20)}`)
+        await console.log(`${green(dataFormatada)} || ${yellow(chat.name)} || \n${msgLower.slice(0, 100)}`)
     }catch{
         console.log(`${red("Erro ao receber mensagem")}`)
     }
@@ -100,7 +100,7 @@ client.on('message_create', async (msg) =>{
             "description": chat.description,
             "type":  msgSplit.length == 2 ? msgSplit[1]  : "vendas"
         }
-        msg.delete(everyone=true)
+        await msg.delete(everyone=true)
         CreateGroup(group)
     }
 
@@ -112,7 +112,7 @@ client.on('message_create', async (msg) =>{
     }
 
     if(msgLower == prefix + "help"){
-        chat.sendMessage(Help())
+        await chat.sendMessage(Help())
     }
 })
 
