@@ -34,6 +34,7 @@ const  ADS = async () => {
         console.log(`${i}: ` + yellow(groups[i].name))
         await client.sendMessage(groups[i].id, ITMessage())
     }
+        console.log(green(`Succes! ${groups.length} groups`))
 }
 
 
