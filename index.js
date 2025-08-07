@@ -1,6 +1,6 @@
 console.log('Entrando... Aguarde')
 
-const { MessageMedia, Client, GroupNotificationTypes } = require("whatsapp-web.js")
+// const { MessageMedia, } = require("whatsapp-web.js")
 
 const chalk = require("chalk");
 const red = chalk.red
@@ -10,29 +10,42 @@ const green = chalk.green
 const client = require("./src/clientStart.js")
 
 //db reources..
-const Group = require("./src/models/Group")
-const { CreateGroup, findGroupsByType, findADSGroups } = require("./src/controller/groupController")
+const { 
+    CreateGroup, 
+    findGroupsByType, 
+} = require("./src/controller/groupController")
 
 // API resourcers..
 const { app } = require("./src/server/app");
-app.get("/ads", (req, res) => { 
-    ADS()
+app.get("/send/:group_type/:text", (req, res) => { 
+    console.log(req.params["group_type"])
+    sendGroupsMessage(
+        req.params["group_type"], 
+        req.params["text"]
+    )
     res.render('success-create')
 })
 
-const { Help, ITMessage } = require("./src/default_answer.js");
+
+const { 
+    Help, 
+    sendTexts 
+} = require("./src/default_answer.js");
 
 
 const prefix = "?"
 
 
 
-const  ADS = async () => {
-    let groups = await findADSGroups()
-    console.log(yellow("Enviando ads message..."))
+const  sendGroupsMessage = async (type, text) => {
+    let groups = await findGroupsByType(type)
+    console.log(yellow(`Enviando ${type} message...`))
     for(let i = 0; i < groups.length; i++){
         console.log(`${i}: ` + yellow(groups[i].name))
-        await client.sendMessage(groups[i].id, ITMessage())
+        await client.sendMessage(
+            groups[i].id, 
+            sendTexts[text]()
+        )
     }
         console.log(green(`Succes! ${groups.length} groups`))
 }
@@ -79,7 +92,8 @@ client.on('message_create', async (msg) =>{
     let chat =  await msg.getChat()
 
     
-    if(msgLower == prefix + "groupID"){
+    if(msgLower == prefix + "groupid"){
+        chat.sendMessage(chat.id._serialized)
         
         //seeing chat atributes
         // console.log(chat)
@@ -87,7 +101,6 @@ client.on('message_create', async (msg) =>{
         
         
 
-        // chat.sendMessage(msg.getInfo())
     }
 
     if(msgLower.startsWith(prefix + "addgroup")){
