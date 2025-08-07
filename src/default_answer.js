@@ -12,6 +12,7 @@ const Help = () => {
         
             *_type: vendas (default), dev, eletrica, filme, meu
 
+        groupid> get group ID
     `
 }
 const ITMessage = () => {
@@ -55,4 +56,14 @@ const ITMessage = () => {
     `
 }
 
-module.exports = { Help, ITMessage }
+const booksTelegram = () =>{
+    return (`
+        Canal de livros voltados pra Ti no telegram:
+        https://t.me/+4-z5C6E9tz4xMGRh 
+    `)
+}
+const sendTexts = {
+    "ITMessage": ITMessage,
+    "booksTelegram": booksTelegram
+}
+module.exports = { Help, ITMessage, booksTelegram, sendTexts }
