@@ -1,26 +1,39 @@
 <%- include('header'); %>
     <div class="container">
-        <div class="row div-cards">
-            
-            <h1 class="text-center">Olá, word</h1>
+        <div class="row">
 
-            <div class="card card-chatbot col-4 p-4">
-                <h4 class="text-center card-title mb-4">Chatboot</h4>
+            <h1 class="text-center title">Olá, word</h1>
+            <div class="div-cards">
 
-                <a class="a-bot" href="/ads">
-                    <div class="a-bot-div text-center">ADS</div>
-                </a>
-            </div>
 
-            <div class="card card-chatbot col-4 p-4">
-                <h4 class="text-center card-title mb-4">Custom Message</h4>
-                <form action="" class="text-center">
-                    <textarea name="message" id="msg" placeholder="Tex message..." class="custom_msg w-100"></textarea>
-                </form>
+                <div class="card card-chatbot col-4 p-4">
+                    <h4 class="text-center card-title mb-4">TI ADS</h4>
 
-                <a class="a-bot" href="#" id="custom_msg_send">
-                    <div class="a-bot-div text-center">Send</div>
-                </a>
+                    <a class="a-bot" href="send/vendas/ITMessage">
+                        <div class="a-bot-div text-center">ADS</div>
+                    </a>
+                </div>
+
+
+                <div class="card card-chatbot col-4 p-4">
+                    <h4 class="text-center card-title mb-4">TI Groups</h4>
+
+                    <a class="a-bot" href="send/dev/booksTelegram">
+                        <div class="a-bot-div text-center">TI</div>
+                    </a>
+                </div>
+
+                <div class="card card-chatbot col-4 p-4">
+                    <h4 class="text-center card-title mb-4">Custom Message</h4>
+                    <form action="" class="text-center">
+                        <textarea name="message" id="msg" placeholder="Tex message..." class="custom_msg w-100">
+                        </textarea>
+                    </form>
+
+                    <a class="a-bot" href="#" id="custom_msg_send">
+                        <div class="a-bot-div text-center">Send</div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
