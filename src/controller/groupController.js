@@ -41,10 +41,11 @@ async function findGroupsByType(Type = "vendas"){
     let arrGroups = groups[0]
     let id_groups = []
     
-    
-
     for(let i = 0; i < arrGroups.length; i++){
-        id_groups.push(arrGroups[i].name)
+        id_groups.push({
+            "id": arrGroups[i].group_id, 
+            "name": arrGroups[i].name
+        })
     }
     console.log(yellow("SearchByID: ") + id_groups)
     return id_groups
