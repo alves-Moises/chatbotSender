@@ -61,9 +61,9 @@ async function findADSGroups(){
     
     for(let i = 0; i < arrGroups.length; i++){
         id_groups.push({
-                "id": arrGroups[i].group_id, 
-                "name": arrGroups[i].name
-            })
+            "id": arrGroups[i].group_id, 
+            "name": arrGroups[i].name
+        })
     }
     return id_groups
 
