@@ -47,7 +47,7 @@ async function findGroupsByType(Type = "vendas"){
             "name": arrGroups[i].name
         })
     }
-    console.log(yellow("SearchByID: ") + id_groups)
+    // console.log(yellow("SearchByID: ") + id_groups)
     return id_groups
 }
 
