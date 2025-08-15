@@ -42,9 +42,15 @@ const  sendGroupsMessage = async (type, text) => {
     console.log(yellow(`Enviando ${type} message...`))
     for(let i = 0; i < groups.length; i++){
         console.log(`${i}: ` + yellow(groups[i].name))
+
         await client.sendMessage(
             groups[i].id, 
             sendTexts[text]()
+        )
+        await new Promise(resolve => {
+                console.log(red("Erro: "), yellow("Time out"))
+                setTimeout(resolve, 300000)
+            }
         )
     }
         console.log(green(`Succes! ${groups.length} groups`))
