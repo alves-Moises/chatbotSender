@@ -42,16 +42,14 @@ const  sendGroupsMessage = async (type, text) => {
     console.log(yellow(`Enviando ${type} message...`))
     for(let i = 0; i < groups.length; i++){
         console.log(`${i}: ` + yellow(groups[i].name))
-
+        var timeStart = Date.now()
         await client.sendMessage(
             groups[i].id, 
             sendTexts[text]()
         )
-        await new Promise(resolve => {
-                console.log(red("Erro: "), yellow("Time out"))
-                setTimeout(resolve, 300000)
-            }
-        )
+        var timeEnd = Date.now()
+        var timeTotal = (timeEnd - timeStart) / 1000
+        console.log(green("Message sent!"), yellow(timeTotal), "secconds.")
     }
         console.log(green(`Succes! ${groups.length} groups`))
 }
@@ -120,8 +118,8 @@ client.on('message_create', async (msg) =>{
             "description": chat.description,
             "type":  msgSplit.length == 2 ? msgSplit[1]  : "vendas"
         }
-        await msg.delete(everyone=true)
         CreateGroup(group)
+        await msg.delete(everyone=true)
     }
 
     
