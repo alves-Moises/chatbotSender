@@ -6,6 +6,8 @@ const Group = require('../../models/Group')
 //=== Middleware ==
 const bodyParser = require('body-parser');
 
+const { sendGroupsMessage } = require('../../controller/adsController');
+
 app.use(bodyParser.json());
 app.use(express.static("public"))
 // app.use(express.urlencoded({extended: true}));
@@ -22,6 +24,16 @@ app.get("/custom-message/:msg", (req , res) => {
 
     res.statusCode(200)
 }) 
+
+app.get("/send/:group_type/:text", (req, res) => { 
+    console.log(req.params["group_type"])
+    sendGroupsMessage(
+        req.params["group_type"], 
+        req.params["text"]
+    )
+    res.render('success-create')
+})
+
 
 
 
