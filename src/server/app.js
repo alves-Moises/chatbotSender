@@ -1,5 +1,5 @@
 const chalk = require("chalk");
-const ejs = require('ejs');
+// const ejs = require('ejs');
 
 const app = require("./routes/api.js")
 const port = 8000
