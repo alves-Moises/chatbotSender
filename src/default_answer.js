@@ -56,6 +56,26 @@ const ITMessage = () => {
     `
 }
 
+const ITEnterprise = () => {
+    return (`
+        *Alves Informática: Seu Parceiro Estratégico em TI.*
+
+        Pra empresas, tempo é dinheiro e tecnologia é essencial. A Alves Informática oferece soluções completas e personalizadas pra garantir a eficiência e segurança da sua operação.
+
+        *Nossos Serviços:*
+        *   *Suporte Técnico Proativo e Reativo:* Manutenção preventiva, correção de falhas e suporte on-demand pra computadores, notebooks e servidores.
+        *   *Gestão de Infraestrutura de Rede:* Configuração, otimização e segurança de redes, garantindo conectividade e performance.
+        *   *Segurança de Dados e Sistemas:* Implementação de rotinas de backup, recuperação de dados e proteção contra ameaças.
+        *   *Manutenção de Equipamentos:* Limpeza, atualização de hardware e software, prolongando a vida útil dos seus ativos.
+        *   *Desenvolvimento Web Corporativo:* Criação de sites responsivos e otimizados, fortalecendo sua presença digital e gerando negócios.
+
+        A gente foca em parceria, entende? Em oferecer um suporte que previna problemas e mantenha sua empresa sempre produtiva.
+        Oferecemos planos mensais para prevenção e manutençaõ
+
+        Entre em contato e vamos conversar sobre as necessidades específicas da sua empresa. Aceitamos PIX.
+    `)
+}
+
 const booksTelegram = () =>{
     return (`
         Canal de livros voltados pra Ti no telegram:
@@ -64,6 +84,7 @@ const booksTelegram = () =>{
 }
 const sendTexts = {
     "ITMessage": ITMessage,
-    "booksTelegram": booksTelegram
+    "booksTelegram": booksTelegram,
+    "ITEnterprise": ITEnterprise
 }
-module.exports = { Help, ITMessage, booksTelegram, sendTexts }
+module.exports = { Help, ITMessage, booksTelegram, sendTexts, ITEnterprise }
