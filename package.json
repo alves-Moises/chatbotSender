@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node index.js",
-        "clean": "bash clear_session.sh"
+        "clean": "bash clear_session.sh",
+        "sass": "sass ./public/assets/styles/sass/main.scss ./public/assets/styles/css/main.css --style=compressed --watch"
     },
     "keywords": [],
     "author": "alves-alves",
