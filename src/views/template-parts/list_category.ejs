@@ -1,0 +1,28 @@
+
+<div class="cat-section">
+
+    <h3 class="section-title">Select the category: </h3>
+    
+    <div class="catList">
+
+        <% list.forEach((item) => { %>
+        
+            <div class="catItem">
+                <input 
+                    type="radio" 
+                    id="<%= item['type'] %>" 
+                    name="category"
+                    required
+                >
+                <label 
+                name="category" 
+                    for="<%= item['type'] %>"
+                >
+                <%= item["type"]; %>
+                </label>
+            </div>
+    
+    
+        <% }); %>
+    </div>
+</div>

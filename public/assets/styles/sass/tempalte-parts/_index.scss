@@ -1,0 +1,41 @@
+
+.title{
+    margin: 20px 0 40px 0;
+}
+.div-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 15px;
+    text-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center ;
+    
+
+}
+.card-chatbot{
+    background-color: #331223;
+    color: $primary-color;
+}
+
+.a-bot{
+    color: var($primary-color);
+    border-style:solid;
+    border-radius: 10px;
+    border-color: #080f08;
+    border-width: 2px;
+    padding: 0;
+    text-decoration: none;
+    margin-bottom: 10px;
+    margin-top: auto;
+}
+
+.a-bot-div{
+    border-radius: 8px;
+
+    background-color: #1b361b;
+}
+
+.custom_msg{
+    border-radius: 7px;
+}
