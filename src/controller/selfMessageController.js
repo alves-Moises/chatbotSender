@@ -1,11 +1,12 @@
 const client = require("../clientStart")
 const { Help } = require("../default_answer")
-const prefix = "?"
 
 const chalk = require("chalk");
 const red = chalk.red
 const yellow = chalk.yellow 
 const green = chalk.green 
+
+const prefix = "?"
 
 client.on('message_create', async (msg) =>{
     if(msg.fromMe == false){ return }
