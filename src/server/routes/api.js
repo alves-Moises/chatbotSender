@@ -7,6 +7,7 @@ const Group = require('../../models/Group')
 const bodyParser = require('body-parser');
 
 const { sendGroupsMessage } = require('../../controller/adsController');
+const { messageList } = require('../../default_answer');
 
 app.use(bodyParser.json());
 app.use(express.static("public"))
@@ -15,8 +16,14 @@ app.use(express.static("public"))
 
 //=== ROUTES ===
 
-app.get("/", (req, res) => {
-    res.render('index'); // Renderiza o template 'index.ejs'
+app.get("/", async (req, res) =>  {
+    catList = await  Group.getCategoryList()
+    
+    data = {
+        ...messageList,
+        "catList": catList
+    }
+    res.render('index', data); // Renderiza o template 'index.ejs'
 })
 
 app.get("/custom-message/:msg", (req , res) => {
