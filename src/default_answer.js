@@ -82,9 +82,9 @@ const booksTelegram = () =>{
         https://t.me/+4-z5C6E9tz4xMGRh 
     `)
 }
-const sendTexts = {
+const messageList = {
     "ITMessage": ITMessage,
     "booksTelegram": booksTelegram,
     "ITEnterprise": ITEnterprise
 }
-module.exports = { Help, ITMessage, booksTelegram, sendTexts, ITEnterprise }
+module.exports = { Help, ITMessage, booksTelegram, messageList, ITEnterprise }
