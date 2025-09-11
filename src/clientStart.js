@@ -27,9 +27,16 @@ const client = new Client({
 	})
 })
 
-client.on("qr", (qr) => {
-	qrcode.generate(qr, { small: true })
+
+
+client.on("qr", async(qr) => {
+	await qrcode.generate(qr, { small: true })
 })
+
+// client.on('loading_screen', (percent, message) => {
+// 	console.log(`Loading...${percent}% ${message}`);
+// });
+
 
 client.on("auth_failure", (msg) => {
 	console.error(chalk.red("Auth failed"), msg)
@@ -37,7 +44,7 @@ client.on("auth_failure", (msg) => {
 
 client.on("disconnected", (reason) => {
 	console.log("Client was logged out", reason)
-})
+})	
 
 client.on("ready", () => {
 	console.log(chalk.green("Programa On-line"))
@@ -45,5 +52,6 @@ client.on("ready", () => {
 });
 
 client.initialize();
+
 
 module.exports = client

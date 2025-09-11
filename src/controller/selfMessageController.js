@@ -1,7 +1,9 @@
 const client = require("../clientStart")
+
 const { Help } = require("../default_answer")
 
 const chalk = require("chalk");
+const { CreateGroup, findGroupsByType } = require("./groupController");
 const red = chalk.red
 const yellow = chalk.yellow 
 const green = chalk.green 
@@ -51,10 +53,11 @@ client.on('message_create', async (msg) =>{
     if(msgLower.startsWith(prefix + "sbyt")){
         if(msgLower == 1){ return }
         let type = msgSplit[1]
-        findGroupsByType((type))
+        findGroupsByType(type)
     }
 
     if(msgLower == prefix + "help"){
         await chat.sendMessage(Help())
     }
 })
+    

@@ -7,6 +7,7 @@ const Group = require('../../models/Group')
 const bodyParser = require('body-parser');
 
 const { sendGroupsMessage } = require('../../controller/adsController');
+const { createdGroup } = require("../../controller/groupController")
 const { messageList } = require('../../default_answer');
 
 app.use(bodyParser.json());
@@ -17,6 +18,7 @@ app.use(express.static("public"))
 //=== ROUTES ===
 
 app.get("/", async (req, res) =>  {
+    console.log("rota...")
     catList = await  Group.getCategoryList()
     
     data = {
@@ -32,9 +34,9 @@ app.get("/custom-message/:msg", (req , res) => {
     res.statusCode(200)
 }) 
 
-app.get("/send/:group_type/:text", (req, res) => { 
+app.get("/send/:group_type/:text", async (req, res) => { 
     console.log(req.params["group_type"])
-    sendGroupsMessage(
+    await sendGroupsMessage(
         req.params["group_type"], 
         req.params["text"]
     )
@@ -64,4 +66,4 @@ app.delete("/del_group/:id", async (req, res) =>{
     res.status(204).send("Exluído com sucesso.")
 })
 
-module.exports =  app 
+module.exports =  app  

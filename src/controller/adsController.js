@@ -1,7 +1,7 @@
-const client = require("../clientStart")
+const client = require("../clientStart.js")
 // const { MessageMedia, } = require("whatsapp-web.js")
 
-const { sendTexts } = require("../default_answer")
+const { messageList } = require("../default_answer")
 
 const { findGroupsByType } = require("./groupController")
 
@@ -21,7 +21,7 @@ const  sendGroupsMessage = async (type, text) => {
         let timeStartMsg = Date.now()
         await client.sendMessage(
             groups[i].id, 
-            sendTexts[text]()
+            messageList[text]()
         ).then(
             () => {
                 var timeEnd = Date.now()
@@ -49,4 +49,4 @@ const  sendGroupsMessage = async (type, text) => {
         )
 }
 
-module.exports = {sendGroupsMessage}
+module.exports = { sendGroupsMessage }
