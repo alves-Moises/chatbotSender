@@ -1,4 +1,4 @@
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, LocalAuth, NoAuth } = require('whatsapp-web.js');
 const chalk = require("chalk");
 const wwebVersion = '2.2412.54';
 const qrcode = require("qrcode-terminal")
@@ -17,7 +17,7 @@ console.log(chalk.yellow("Iniciando..."))
 const client = new Client({
     authStrategy: new LocalAuth({
 		puppeteer: {
-			headless: false
+			headless: true
 		},
 		clientId: "alves_bot",
 		webVersionCache: {
@@ -27,10 +27,10 @@ const client = new Client({
 	})
 })
 
+client.initialize()
 
-
-client.on("qr", async(qr) => {
-	await qrcode.generate(qr, { small: true })
+client.on("qr", (qr) => {
+	qrcode.generate(qr, { small: true })
 })
 
 // client.on('loading_screen', (percent, message) => {
@@ -43,15 +43,18 @@ client.on("auth_failure", (msg) => {
 })
 
 client.on("disconnected", (reason) => {
-	console.log("Client was logged out", reason)
+	console.log("Client was logged out... ", reason)
 })	
 
-client.on("ready", () => {
+// When the client is ready, run this code (only once)
+client.once('ready', () => {
+    console.log('Client is ready!');
+});
+
+client.on("ready", () => {	
 	console.log(chalk.green("Programa On-line"))
 	// console.log(getChats())
 });
-
-client.initialize();
 
 
 module.exports = client
