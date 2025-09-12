@@ -10,3 +10,5 @@ require("./../controller/selfMessageController.js")
 
 // API resourcers..
 require("./../server/app.js");    
+
+module.exports = { client }
