@@ -24,7 +24,9 @@ const client = new Client({
 			type: 'remote',
 			remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${wwebVersion}.html`,
 		},
-	})
+	}),
+	browserName: "IE",
+	deviceName: "xxx"
 })
 
 client.initialize()
@@ -33,9 +35,9 @@ client.on("qr", (qr) => {
 	qrcode.generate(qr, { small: true })
 })
 
-// client.on('loading_screen', (percent, message) => {
-// 	console.log(`Loading...${percent}% ${message}`);
-// });
+client.on('loading_screen', (percent, message) => {
+	console.log(`Loading...${percent}% ${message}`);
+});
 
 
 client.on("auth_failure", (msg) => {
@@ -46,10 +48,7 @@ client.on("disconnected", (reason) => {
 	console.log("Client was logged out... ", reason)
 })	
 
-// When the client is ready, run this code (only once)
-client.once('ready', () => {
-    console.log('Client is ready!');
-});
+
 
 client.on("ready", () => {	
 	console.log(chalk.green("Programa On-line"))
