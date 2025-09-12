@@ -1,1 +1,1 @@
-require("./src/controller/whatsappController")
+const {client} = require("./src/controller/whatsappController")
