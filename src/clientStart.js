@@ -1,4 +1,8 @@
-const { Client, LocalAuth, NoAuth } = require('whatsapp-web.js');
+const {
+	Client,
+	LocalAuth,
+} = require('whatsapp-web.js');
+
 const chalk = require("chalk");
 const wwebVersion = '2.2412.54';
 const qrcode = require("qrcode-terminal")
