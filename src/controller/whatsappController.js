@@ -4,7 +4,7 @@ const client = require("./../clientStart.js")
 
 
 require("./../controller/selfMessageController.js")
-require("./../controller/messageController.js")
+require("./../controller/messageController.js") 
 
 
 
