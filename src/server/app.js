@@ -3,7 +3,7 @@ const chalk = require("chalk");
 
 const app = require("./routes/api.js")
 const port = 8000
-const ip = "192.168.1.20"
+const ip = "localhost"
 
 app.set('view engine', 'ejs'); // Define EJS como o motor de template
 app.set('views', './src/views/'); // Define a pasta onde seus arquivos EJS estão
