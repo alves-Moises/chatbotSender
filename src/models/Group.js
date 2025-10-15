@@ -26,7 +26,7 @@ const Group = {
     async list(){
         const query = "SELECT * FROM groups";
         const [groups] = await db.execute(query);
-        return groups[0];
+        return groups;
     },
 
     async delete(ID){
