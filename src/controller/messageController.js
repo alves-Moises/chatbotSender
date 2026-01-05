@@ -7,15 +7,17 @@ const green = chalk.green
 const red = chalk.red
 
 client.on("message", async (msg) => {
+    if(msg.isStatus || msg.fromMe) return
+
     let msgLower = await msg.body.toLocaleLowerCase().trim()
     let from = await msg.from 
-    let user = await msg.getContact()
-    let user_name = await user.pushname
+    // let user = await msg.getContact()
+    // let user_name = await user.pushname
     let chat = await msg.getChat()
     
     if(msgLower == prefix + "ping"){
         msg.reply('pong')
-        console.log(`pong... ${chalk.yellow(`${user_name}`)}`)
+        console.log(`pong... ${chalk.yellow(`${from}`)}`)
     }
 
     // just for debbuging...
@@ -36,8 +38,7 @@ client.on("message", async (msg) => {
         console.log(
             `${red(
                 "Erro ao receber mensagem"
-                )
-            }`
+            )}`
         )
     }
 })
