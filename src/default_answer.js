@@ -56,6 +56,37 @@ const ITMessage = () => {
     `
 }
 
+const ITNews = () => {
+    return (`
+        
+        🚀 Alves Informática: Sua Solução em Tecnologia! 🚀
+        https://alves-informatica.com/
+
+        Olá, clientes e amigos! 👋 Estamos empolgados em anunciar uma novidade incrível no nosso site: Desenvolvimento de Sites para Pequenas Empresas! 🌐
+
+        Agora, você pode ter um site moderno, responsivo e otimizado para o Google, tudo em um só lugar! Nossa equipe de especialistas está pronta para criar um site que atenda às suas necessidades e aumente a visibilidade do seu negócio online.
+
+        Alguns de nossos serviços:
+
+        - Manutenção de Computadores e Notebooks: Formatação, atualização e instalação de softwares, recuperação de arquivos perdidos ou deletados, troca de pasta térmica e limpeza interna, reparo de fontes e circuitos elétricos, configuração de impressoras e redes.
+        - Manutenção de Video Games: Instalação do OPL para rodar jogos de PS2 via pen drive, troca de pasta térmica e limpeza interna, reparo de circuitos eletrônicos, instalação e atualização do Recalbox para jogar clássicos retrô.
+        - Manutenção de Celulares: Troca de tela e aplicação de película, reparo de botões, alto-falantes e microfones, limpeza de conector de carga e entrada de fone, desbloqueio e restauração de sistema.
+        - Desenvolvimento de Sites: Criação de sites responsivos, modernos e otimizados para o Google, hospedagem, domínio e suporte técnico inclusos.
+
+        Parceria de Suporte Técnico para Empresas
+
+        Sabemos que a tecnologia pode ser complexa e demorada. É por isso que oferecemos parceria de suporte técnico para empresas, garantindo que seus sistemas estejam sempre funcionando e seguros.
+
+        Entre em Contato
+
+        Não perca mais tempo! Entre em contato conosco pelo WhatsApp e faça seu orçamento sem compromisso. Aceitamos PIX! 📲
+
+        Visite nosso site: https://alves-informatica.com/dev-services/
+
+        Alves Informática: Sua Solução em Tecnologia! 🚀
+    `) 
+}
+
 const ITEnterprise = () => {
     return (`
         *Alves Informática: Seu Parceiro Estratégico em TI.*
@@ -72,6 +103,7 @@ const ITEnterprise = () => {
         A gente foca em parceria, entende? Em oferecer um suporte que previna problemas e mantenha sua empresa sempre produtiva.
         Oferecemos planos mensais para prevenção e manutençaõ
 
+
         Entre em contato e vamos conversar sobre as necessidades específicas da sua empresa. Aceitamos PIX.
     `)
 }
@@ -85,6 +117,13 @@ const booksTelegram = () =>{
 const messageList = {
     "ITMessage": ITMessage,
     "booksTelegram": booksTelegram,
-    "ITEnterprise": ITEnterprise
+    "ITEnterprise": ITEnterprise,
+    "ISNews": ITNews
 }
-module.exports = { Help, ITMessage, booksTelegram, messageList, ITEnterprise }
+module.exports = { 
+    Help,
+    ITMessage,
+    booksTelegram,
+    messageList,
+    ITEnterprise,
+}
