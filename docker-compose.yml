@@ -1,0 +1,7 @@
+version: "2"
+services:
+    container_name: "chatbot_send_message"
+    restart: aways
+    build: .
+    envioronmnent:
+        -  
