@@ -21,7 +21,8 @@ console.log(chalk.yellow("Iniciando..."))
 const client = new Client({
     authStrategy: new LocalAuth({
 		puppeteer: {
-			headless: true
+			headless: true,
+			args: ['--no-sandbox']
 		},
 		clientId: "alves_bot",
 		webVersionCache: {
@@ -29,7 +30,7 @@ const client = new Client({
 			remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${wwebVersion}.html`,
 		},
 	}),
-	browserName: "IE",
+	browserName: "Firefox",
 	deviceName: "xxx"
 })
 
