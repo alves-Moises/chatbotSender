@@ -21,7 +21,8 @@ const  sendGroupsMessage = async (type, text) => {
         let timeStartMsg = Date.now()
         await client.sendMessage(
             groups[i].id, 
-            messageList[text]()
+            messageList[text](),
+            { sendSeen: false }
         ).then(
             () => {
                 var timeEnd = Date.now()
