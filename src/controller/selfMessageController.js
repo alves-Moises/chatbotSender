@@ -36,7 +36,7 @@ client.on('message_create', async (msg) =>{
 
     
     if(msgLower == prefix + "groupid"){
-        chat.sendMessage(chat.id._serialized)
+        chat.sendMessage(chat.id._serialized, { sendSeen: false })
         
         //seeing chat atributes
         // console.log(chat)
