@@ -34,7 +34,7 @@ const client = new Client({
 			remotePath: `https://raw.githubusercontent.com/wppconnect-team/wa-version/main/html/${wwebVersion}.html`,
 		},
 	}),
-	browserName: "Firefox",
+	browserName: "Chrome",
 	deviceName: "xxx"
 })
 
