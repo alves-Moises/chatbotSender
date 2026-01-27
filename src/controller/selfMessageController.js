@@ -78,7 +78,7 @@ client.on('message_create', async (msg) =>{
     }
 
     if(msgLower == prefix + "help"){
-        await chat.sendMessage(Help())
+        await chat.sendMessage(Help(), {sendSeen: false})
     }
 })
     
