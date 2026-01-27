@@ -63,7 +63,7 @@ client.on('message_create', async (msg) =>{
                 : "vendas"
         }
         CreateGroup(group)
-        await msg.delete(everyone=true)
+        await msg.delete(everyone=true, {sendSeen: false})
     }
 
     
