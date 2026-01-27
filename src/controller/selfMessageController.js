@@ -70,7 +70,11 @@ client.on('message_create', async (msg) =>{
     if(msgLower.startsWith(prefix + "sbyt")){
         if(msgLower == 1){ return }
         let type = msgSplit[1]
-        findGroupsByType(type)
+
+        chat.sendMessage(
+            findGroupsByType(type),
+            {sendSeen: false}
+        )
     }
 
     if(msgLower == prefix + "help"){
