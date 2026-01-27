@@ -15,11 +15,24 @@ const green = chalk.green
 const prefix = "?"
 
 client.on('message_create', async (msg) =>{
-    if(msg.fromMe == false){ return }
     
-    let msgLower = msg.body.toLowerCase().trim()
-    let msgSplit = msgLower.split(" ")
-    let chat =  await msg.getChat()
+    
+    // console.log(msg)
+    try{
+        if(msg.fromMe == false){ return }
+
+        var msgLower = msg.body
+        
+        var msgSplit = msg.body.split(" ")
+        var chat =  await msg.getChat()
+
+        console.log(msgLower)
+        console.log(msgSplit)
+        await chat.sendMessage(msg, {sendSeen: false})
+    }catch(err){
+        console.log(red(err))
+        return
+    }
 
     
     if(msgLower == prefix + "groupid"){
