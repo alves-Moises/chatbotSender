@@ -20,20 +20,21 @@ client.on('message_create', async (msg) =>{
     // console.log(msg)
     try{
         if(msg.fromMe == false){ return }
+        var msgSTR = msg.body.toString()
 
-        var msgLower = msg.body
+    
+    }catch(err){
+        console.log(red(err))
+        return
+    }
+        var msgLower = msgSTR.toLowerCase()
         
-        var msgSplit = msg.body.split(" ")
+        var msgSplit = msgSTR.split(" ")
         var chat =  await msg.getChat()
 
         console.log(msgLower)
         console.log(msgSplit)
         await chat.sendMessage(msg, {sendSeen: false})
-    }catch(err){
-        console.log(red(err))
-        return
-    }
-
     
     if(msgLower == prefix + "groupid"){
         chat.sendMessage(chat.id._serialized, { sendSeen: false })
