@@ -19,7 +19,9 @@ client.on('message_create', async (msg) =>{
     
     // console.log(msg)
     try{
-        if(msg.fromMe == false){ return }
+        if(msg.fromMe == false) return 
+
+        console.log(msg.body) ? msg.body.includes("Alves") : ""
         var msgSTR = msg.body.toString()
 
     
