@@ -31,10 +31,11 @@ client.on('message_create', async (msg) =>{
         console.log(red(err))
         return
     }
-        var msgLower = msgSTR.toLowerCase()
-        
-        var msgSplit = msgSTR.split(" ")
-        var chat =  await msg.getChat()
+
+    var msgLower = msgSTR.toLowerCase()
+    
+    var msgSplit = msgSTR.split(" ")
+    var chat =  await msg.getChat()
 
         console.log(msgLower)
         console.log(msgSplit)
