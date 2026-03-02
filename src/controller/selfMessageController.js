@@ -35,10 +35,6 @@ client.on('message_create', async (msg) =>{
     var msgSplit = msgSTR.split(" ")
     var chat =  await msg.getChat()
 
-        console.log(msgLower)
-        console.log(msgSplit)
-        await chat.sendMessage(msg, {sendSeen: false})
-    
     if(msgLower == prefix + "groupid"){
         await chat.sendMessage(chat.id._serialized, { sendSeen: false })
     }
