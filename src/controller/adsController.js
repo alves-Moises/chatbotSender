@@ -36,6 +36,7 @@ const  sendGroupsMessage = async (type, text) => {
             }
         )
     }
+    
     let timeFinal = Date.now()
     let totalTime = (timeFinal - timeStart) / 1000
     console.log(
@@ -47,7 +48,7 @@ const  sendGroupsMessage = async (type, text) => {
         `)
 
 
-        )
+    )
 }
 
 module.exports = { sendGroupsMessage }
