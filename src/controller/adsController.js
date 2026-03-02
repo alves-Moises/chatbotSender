@@ -38,13 +38,13 @@ const  sendGroupsMessage = async (type, text) => {
     }
     let timeFinal = Date.now()
     let totalTime = (timeFinal - timeStart) / 1000
-        console.log(
-            green(`
-                ===========
-                Succes! ${groups.length} groups
-                ${totalTime} secs
-                ============
-            `)
+    console.log(
+        green(`
+            ===========
+            Succes! ${groups.length} groups
+            ${totalTime} secs
+            ============
+        `)
 
 
         )
