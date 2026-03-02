@@ -33,7 +33,6 @@ client.on('message_create', async (msg) =>{
     }
 
     var msgLower = msgSTR.toLowerCase()
-    
     var msgSplit = msgSTR.split(" ")
     var chat =  await msg.getChat()
 
