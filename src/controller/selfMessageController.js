@@ -25,7 +25,6 @@ client.on('message_create', async (msg) =>{
         var msgSTR = msg.body.toString()
 
         if(!msgSTR.startsWith(prefix)) return
-
     
     }catch(err){
         console.log(red(err))
