@@ -60,11 +60,11 @@ client.on('message_create', async (msg) =>{
     }
 
     
-    if(msgLower.startsWith(prefix + "sbyt")){
+    if(msgLower.startsWith(prefix + "search")){
         if(msgLower == 1){ return }
         let type = msgSplit[1]
 
-        chat.sendMessage(
+        await chat.sendMessage(
             findGroupsByType(type),
             {sendSeen: false}
         )
