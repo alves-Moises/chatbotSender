@@ -40,14 +40,7 @@ client.on('message_create', async (msg) =>{
         await chat.sendMessage(msg, {sendSeen: false})
     
     if(msgLower == prefix + "groupid"){
-        chat.sendMessage(chat.id._serialized, { sendSeen: false })
-        
-        //seeing chat atributes
-        // console.log(chat)
-        // console.log(chat.description)
-        
-        
-
+        await chat.sendMessage(chat.id._serialized, { sendSeen: false })
     }
 
     if(msgLower.startsWith(prefix + "addgroup")){
