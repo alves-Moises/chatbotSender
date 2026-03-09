@@ -21,7 +21,6 @@ client.on('message_create', async (msg) =>{
     try{
         if(msg.fromMe == false) return 
 
-        msg.body.includes("Alves") ? console.log(msg.body) : ""
         var msgSTR = msg.body.toString()
 
         if(!msgSTR.startsWith(prefix)) return
