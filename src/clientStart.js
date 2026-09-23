@@ -32,10 +32,23 @@ const client = new Client({
 			
 		},
 		clientId: "alves_bot",
-		webVersionCache: {
-			type: 'local',
-			remotePath: `.wwebjs_cache`,
-		},
+
+
+		// webVersionCache: {
+		// 	type: 'local',
+		// 	remotePath: `.wwebjs_cache`,
+		// },
+
+		// puppeteer: {
+		// 	headless: false,
+		// 	args: [
+		// 		'--no-sandbox',
+		// 		'--disable-setuid-sandbox',
+		// 		'--disable-dev-shm-usage',
+		// 		'--disable-gpu',
+  		// 		'--disable-extensions'
+		// 	],
+		// },
 	}),
 	browserName: "Chrome",
 	deviceName: "xxx"
