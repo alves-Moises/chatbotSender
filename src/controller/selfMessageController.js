@@ -15,10 +15,7 @@ const green = chalk.green
 const prefix = "?"
 
 client.on('message_create', async (msg) =>{
-    const state = await client.getState()
-    console.log(red(state))
-
-    if(state !== 'CONNECTED') return
+    
     
     // console.log(msg)
     try{
@@ -30,7 +27,13 @@ client.on('message_create', async (msg) =>{
     
     }catch(err){
         console.log(red(err))
-        return
+        
+        var msgLower = msgSTR.toLowerCase()
+        var msgSplit = msgSTR.split(" ")
+        var chat =  await msg.getChat()
+
+        if(!msgLower.startsWith(prefix)) return
+
     }
 
     var msgLower = msgSTR.toLowerCase()
