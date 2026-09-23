@@ -45,9 +45,13 @@ const Group = {
         
     },
     async getGroupByType(Type){
-        const query = `SELECT * FROM groups WHERE type = '${Type}'`
-        const groups = await db.execute(query)
-        return groups
+        try{
+            const query = `SELECT * FROM groups WHERE type = '${Type}'`
+            const groups = await db.execute(query)
+            return groups
+        }catch(error){
+            console.error(`Erro: ${error}`)
+        }
     },
 
     async getCategoryList(){
