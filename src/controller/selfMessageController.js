@@ -4,8 +4,8 @@ const { Help } = require("../default_answer")
 
 const chalk = require("chalk");
 const {
-        CreateGroup,
-        findGroupsByType
+    CreateGroup,
+    findGroupsByType
 } = require("./groupController");
 
 const red = chalk.red
@@ -20,7 +20,6 @@ client.on('message_create', async (msg) =>{
 
     if(state !== 'CONNECTED') return
     
-    // console.log(msg)
     try{
         if(msg.fromMe == false) return 
 
@@ -39,12 +38,6 @@ client.on('message_create', async (msg) =>{
         return
     }
 
-    var msgLower = msgSTR.toLowerCase()
-    }catch(err){
-        console.log(red(err))
-        return
-    var msgSplit = msgSTR.split(" ")
-    var chat =  await msg.getChat()
 
     if(msgLower == prefix + "groupid"){
         await chat.sendMessage(chat.id._serialized, { sendSeen: false })
