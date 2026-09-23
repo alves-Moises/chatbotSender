@@ -40,6 +40,7 @@ const client = new Client({
 		// 	],
 		// },
 	}),
+
 	browserName: "Chrome",
 	deviceName: "xxx"
 })
