@@ -35,14 +35,9 @@ const Group = {
     },
 
     async getGroup(ID){
-        try {
-            const query = `SELECT * FROM groups WHERE group_id = '${ID}'`
-            const group = await db.execute(query)
-            return group
-        } catch (error) {
-            console.error("Erro em GetGroup")
-        }
-        
+        const query = `SELECT * FROM groups WHERE group_id = '${ID}'`
+        const group = await db.execute(query)
+        return group
     },
     async getGroupByType(Type){
         const query = `SELECT * FROM groups WHERE type = '${Type}'`
@@ -56,5 +51,11 @@ const Group = {
         return catList[0]
     }
 }
-    
-module.exports = Group
+        try{
+
+            const query = `SELECT DISTINCT type FROM Groups`
+            const catList = await db.execute(query)
+            return catList[0]
+        }catch(error){
+            console.error(`Erro: ${error}`)
+        }
