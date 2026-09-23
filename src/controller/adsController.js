@@ -8,6 +8,7 @@ const { findGroupsByType } = require("./groupController")
 const chalk = require("chalk")
 const yellow = chalk.yellow
 const green = chalk.green
+const red = chalk.red
 
 
 const  sendGroupsMessage = async (type, text) => {
