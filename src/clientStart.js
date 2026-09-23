@@ -56,7 +56,6 @@ client.on('loading_screen', (percent, message) => {
 });
 
 
-
 client.on("auth_failure", (msg) => {
 	console.error(chalk.red("Auth failed"), msg)
 })
@@ -64,7 +63,6 @@ client.on("auth_failure", (msg) => {
 client.on("disconnected", (reason) => {
 	console.log("Client was logged out... ", reason)
 })	
-
 
 
 client.on("ready", () => {	
