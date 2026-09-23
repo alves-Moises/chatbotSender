@@ -68,3 +68,7 @@ const Group = {
         }catch(error){
             console.error(`Erro: ${error}`)
         }
+    }
+}
+    
+module.exports = Group
