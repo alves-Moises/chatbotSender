@@ -32,23 +32,10 @@ const client = new Client({
 			
 		},
 		clientId: "alves_bot",
-
-
-		// webVersionCache: {
-		// 	type: 'local',
-		// 	remotePath: `.wwebjs_cache`,
-		// },
-
-		// puppeteer: {
-		// 	headless: false,
-		// 	args: [
-		// 		'--no-sandbox',
-		// 		'--disable-setuid-sandbox',
-		// 		'--disable-dev-shm-usage',
-		// 		'--disable-gpu',
-  		// 		'--disable-extensions'
-		// 	],
-		// },
+		webVersionCache: {
+			type: 'local',
+			remotePath: `.wwebjs_cache`,
+		},
 	}),
 	browserName: "Chrome",
 	deviceName: "xxx"
@@ -63,6 +50,7 @@ client.on("qr", (qr) => {
 client.on('loading_screen', (percent, message) => {
 	console.log(`Loading...${percent}% ${message}`);
 });
+
 
 
 client.on("auth_failure", (msg) => {
