@@ -35,9 +35,14 @@ const Group = {
     },
 
     async getGroup(ID){
-        const query = `SELECT * FROM groups WHERE group_id = '${ID}'`
-        const group = await db.execute(query)
-        return group
+        try {
+            const query = `SELECT * FROM groups WHERE group_id = '${ID}'`
+            const group = await db.execute(query)
+            return group
+        } catch (error) {
+            console.error("Erro em GetGroup")
+        }
+        
     },
     async getGroupByType(Type){
         const query = `SELECT * FROM groups WHERE type = '${Type}'`
