@@ -27,7 +27,13 @@ client.on('message_create', async (msg) =>{
         var msgSTR = msg.body.toString()
 
         if(!msgSTR.startsWith(prefix)) return
-    
+        
+        var msgLower = msgSTR.toLowerCase()
+        var msgSplit = msgSTR.split(" ")
+        var chat =  await msg.getChat()
+
+        if(!msgLower.startsWith(prefix)) return
+
     }catch(err){
         console.log(red(err))
         return
