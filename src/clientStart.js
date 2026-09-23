@@ -1,6 +1,6 @@
 const {
 	Client,
-	LocalAuth,
+	LocalAuth
 } = require('whatsapp-web.js');
 
 const chalk = require("chalk");
