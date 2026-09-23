@@ -15,7 +15,10 @@ const green = chalk.green
 const prefix = "?"
 
 client.on('message_create', async (msg) =>{
-    
+    const state = await client.getState()
+    console.log(red(state))
+
+    if(state !== 'CONNECTED') return
     
     // console.log(msg)
     try{
