@@ -7,6 +7,10 @@ const green = chalk.green
 const red = chalk.red
 
 client.on("message", async (msg) => {
+    const state = await client.getState();
+    console.log(yellow(state))
+    if(state !== 'CONNECTED') return
+
     if(msg.isStatus || msg.fromMe) return
 
     let msgLower = await msg.body.toLocaleLowerCase().trim()
