@@ -19,18 +19,8 @@ const qrcode = require("qrcode-terminal")
 
 console.log(chalk.yellow("Iniciando..."))
 const client = new Client({
-    authStrategy: new LocalAuth({
-		dataPath: 'localAuth',
-		puppeteer: {
-			// headless: true,
-			args: [
-			'--no-sandbox',
-            '--disable-setuid-sandbox',
-            // '--disable-dev-shm-usage',
-            // '--disable-gpu'
-			],
-			
-		},
+    authStrategy: new LocalAuth ({
+		dataPath: 'alves_session',
 		clientId: "alves_bot",
 
 
