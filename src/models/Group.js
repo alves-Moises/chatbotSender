@@ -55,11 +55,6 @@ const Group = {
     },
 
     async getCategoryList(){
-        const query = `SELECT DISTINCT type FROM Groups`
-        const catList = await db.execute(query)
-        return catList[0]
-    }
-}
         try{
 
             const query = `SELECT DISTINCT type FROM Groups`
