@@ -17,7 +17,16 @@ client.on("message", async (msg) => {
     let from = await msg.from 
     // let user = await msg.getContact()
     // let user_name = await user.pushname
-    let chat = await msg.getChat()
+    try {
+        console.log(green("..."))
+        // let chat = await client.getChatById(msg.from)
+        // console.log(msg)
+        
+    } catch (error) {
+        console.log(yellow(`Erro:`))
+        console.log(error)
+        return
+    }
     
     if(msgLower == prefix + "ping"){
         msg.reply('pong')
