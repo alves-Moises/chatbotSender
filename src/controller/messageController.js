@@ -31,7 +31,6 @@ client.on("message", async (msg) => {
     // let user_name = await user.pushname
     try {
         console.log(green("..."))
-        // let chat = await client.getChatById(msg.from)
         // console.log(msg)
         
     } catch (error) {
