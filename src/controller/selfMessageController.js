@@ -29,7 +29,12 @@ client.on('message_create', async (msg) =>{
         
         var msgLower = msgSTR.toLowerCase()
         var msgSplit = msgSTR.split(" ")
-        var chat =  await msg.getChat()
+        
+        try{
+            var chat = await client.getChatById(msg.from)
+        }catch{
+            var chat = await msg.getChat()
+        }
 
         if(!msgLower.startsWith(prefix)) return
 
