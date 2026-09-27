@@ -16,8 +16,6 @@ const prefix = "?"
 
 client.on('message_create', async (msg) =>{
     const state = await client.getState()
-    console.log(red(state))
-
     if(state !== 'CONNECTED') return
     
     try{
@@ -84,10 +82,12 @@ client.on('message_create', async (msg) =>{
             findGroupsByType(type),
             {sendSeen: false}
         )
+        return
     }
 
     if(msgLower == prefix + "help"){
         await chat.sendMessage(Help(), {sendSeen: false})
+        return
     }
 })
     
