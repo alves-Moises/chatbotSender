@@ -61,8 +61,9 @@ client.on("message", async (msg) => {
     }catch{
         console.log(
             `${red(
-                "Erro ao receber mensagem"
-            )}`
+                "Erro ao receber mensagem: "
+            )}`,
+            err
         )
     }
 })
