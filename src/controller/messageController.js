@@ -15,6 +15,18 @@ client.on("message", async (msg) => {
 
     let msgLower = await msg.body.toLocaleLowerCase().trim()
     let from = await msg.from 
+
+    try{
+        var chat = await msg.getChat()
+    }catch{
+        try{
+            var chat = await client.getChatById(msg.from)
+        }catch(err){
+            console.log(red("Erro ao receber mensagem - MessageController"))
+            console.log(err)
+            return
+        }
+    }
     // let user = await msg.getContact()
     // let user_name = await user.pushname
     try {
