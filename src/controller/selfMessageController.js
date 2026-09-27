@@ -62,6 +62,12 @@ client.on('message_create', async (msg) =>{
         }
         CreateGroup(group)
         await msg.delete(everyone=true, {sendSeen: false})
+        console.log(
+            green("Grupo "),
+            yellow(chat.name),
+            green("criado com sucesso!")
+        )
+        return
     }
 
     
