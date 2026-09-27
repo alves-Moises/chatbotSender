@@ -60,7 +60,7 @@ client.on('message_create', async (msg) =>{
                 ? msgSplit[1] 
                 : "vendas"
         }
-        CreateGroup(group)
+        await CreateGroup(group)
         await msg.delete(everyone=true, {sendSeen: false})
         console.log(
             green("Grupo "),
