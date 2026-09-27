@@ -45,8 +45,7 @@ client.on('message_create', async (msg) =>{
     }
 
 
-        console.log(red("Erro ao criar mensagem"))
-        console.log(err)
+    if(msgLower == prefix + "groupid"){
         await chat.sendMessage(chat.id._serialized, { sendSeen: false })
     }
 
