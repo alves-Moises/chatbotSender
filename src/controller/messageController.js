@@ -58,12 +58,11 @@ client.on("message", async (msg) => {
         });
         console.log(yellow("\nMensagem recebida..."))
         await console.log(`${green(dataFormatada)} || ${yellow(chat.name)} || \n${msgLower.slice(0, 100)}`)
-    }catch{
+    }catch(err){
         console.log(
             `${red(
-                "Erro ao receber mensagem: "
-            )}`,
-            err
+                "Erro ao receber mensagem"
+            )}`
         )
     }
 })
