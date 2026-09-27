@@ -39,7 +39,8 @@ client.on('message_create', async (msg) =>{
         if(!msgLower.startsWith(prefix)) return
 
     }catch(err){
-        console.log(red(err))
+        console.log(red("Erro ao criar mensagem"))
+        console.log(err)
         return
     }
 
