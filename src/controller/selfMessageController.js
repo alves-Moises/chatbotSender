@@ -29,12 +29,7 @@ client.on('message_create', async (msg) =>{
         
         var msgLower = msgSTR.toLowerCase()
         var msgSplit = msgSTR.split(" ")
-        
-        try{
-            var chat = await client.getChatById(msg.from)
-        }catch{
-            var chat = await msg.getChat()
-        }
+        var chat =  await msg.getChat()
 
         if(!msgLower.startsWith(prefix)) return
 
@@ -44,7 +39,8 @@ client.on('message_create', async (msg) =>{
     }
 
 
-    if(msgLower == prefix + "groupid"){
+        console.log(red("Erro ao criar mensagem"))
+        console.log(err)
         await chat.sendMessage(chat.id._serialized, { sendSeen: false })
     }
 
